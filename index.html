@@ -14,7 +14,7 @@ html,body{margin:0;height:100%;background:#f4f7f8}
 <script>
 (async()=>{
   try{
-    const res=await fetch('./foodloop-v14.gz',{cache:'no-store'});
+    const res=await fetch('https://raw.githubusercontent.com/Long2812/foodloop-ai/main/foodloop-v14.gz?rev=1',{cache:'no-store'});
     if(!res.ok) throw new Error('App payload unavailable');
     const stream=res.body.pipeThrough(new DecompressionStream('gzip'));
     const bytes=new Uint8Array(await new Response(stream).arrayBuffer());
